@@ -27,11 +27,13 @@ namespace APITestApp.Services
         public SinglePostcodeResponse ResponseObject { get; set; }
         #endregion
 
+
         // create construnctor, create rest client obj
         public SinglePostCodeService()
         {
             Client = new RestClient { BaseUrl = new Uri(AppConfigReader.BaseUrl) };
         }
+
 
         public async Task MakeRequestAsync(string postcode)
         {

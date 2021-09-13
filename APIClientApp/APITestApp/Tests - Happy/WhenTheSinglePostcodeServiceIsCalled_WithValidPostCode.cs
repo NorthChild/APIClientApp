@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using APITestApp.Services;
-using System.Threading.Tasks;
 
 namespace APITestApp.Tests
 {
@@ -39,6 +38,22 @@ namespace APITestApp.Tests
             var result = _singlePostCodeService.ResponseContent["result"]["postcode"].ToString();
             Assert.That(result, Is.EqualTo("EC2Y 5AS"));
         }
+
+
+        [Test]
+        public void ObjectStatusIs200()
+        {
+            var result = _singlePostCodeService.StatusCode;
+            Assert.That(result, Is.EqualTo(200));
+        }
+
+        [Test]
+        public void AdminDistrictIsCityOfLondon()
+        {
+            var result = _singlePostCodeService.ResponseObject.result.admin_district;
+            Assert.That(result, Is.EqualTo("City of London"));
+        }
+
 
 
 

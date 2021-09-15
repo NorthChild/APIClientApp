@@ -3,41 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using APITestApp.PostcodesIOService;
 using Newtonsoft;
 using Newtonsoft.Json;
 
-namespace APITestApp
+namespace APITestApp.PostcodeIOService
 {
-    //public class OutcodeResponse
-    //{
-    //    public int status { get; set; }
-    //    public OutcodeResponse result { get; set; }
-    //}
-
-
-    //public class OutcodeResult
-    //{
-    //    public string outcode { get; set; }
-    //    public float longitude { get; set; }
-    //    public float latitude { get; set; }
-    //    public int northings { get; set; }
-    //    public int eastings { get; set; }
-    //    public string[] admin_district { get; set; }
-    //    public string[] parish { get; set; }
-    //    public object[] admin_county { get; set; }
-    //    public string[] admin_ward { get; set; }
-    //    public string[] country { get; set; }
-    //}
-
-
-    public class SinglePostcodeResponse
+    public class SinglePostcodeResponse : IResponse 
     {
         [JsonProperty("status")]
         public int status { get; set; }
         public Postcode result { get; set; }
     }
 
-    public class BulkPostcodeResponse
+    public class BulkPostcodeResponse : IResponse
     {
         [JsonProperty("status")]
         public int status { get; set; }

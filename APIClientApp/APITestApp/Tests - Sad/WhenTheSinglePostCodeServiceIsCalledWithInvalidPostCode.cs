@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using APITestApp.Services;
+using APITestApp.PostcodeIOService;
 using System.Threading.Tasks;
 
 namespace APITestApp.Test___Sad
@@ -16,7 +16,7 @@ namespace APITestApp.Test___Sad
         [Test]
         public void StatusIs404()
         {
-            Assert.That(_singlePostcodeService.StatusCode, Is.EqualTo(404));
+            Assert.That(_singlePostcodeService.CallManager.StatusCode, Is.EqualTo(404));
         }
     }
 }
